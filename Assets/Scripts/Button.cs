@@ -8,7 +8,7 @@ public class Button : MonoBehaviour, IPointerClickHandler
     [SerializeField] private int _barChangeValue;
     [SerializeField] private GameObject _player;
 
-    Hero _hero;
+    private Hero _hero;
 
     private void Start()
     {

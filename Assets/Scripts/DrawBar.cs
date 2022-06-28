@@ -14,7 +14,6 @@ public class DrawBar : MonoBehaviour
         _slider = GetComponent<Slider>();
     }
 
-
     public void ChangeBarValue(float value)
     {
         float _currentValue = _slider.value + value;
