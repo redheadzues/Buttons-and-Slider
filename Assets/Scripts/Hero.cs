@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 public class Hero : MonoBehaviour
 {
-    [SerializeField] private Slider _slider;
+    [SerializeField] private BarRenderer _barRenderer;
 
     private Animator _animator;
     private static int _takeHit = Animator.StringToHash("TakeHit");
@@ -14,31 +14,25 @@ public class Hero : MonoBehaviour
     private static int _die = Animator.StringToHash("Die");
     private int _maxHealth = 50;
     private int _health;
-    private DrawBar _healthBar;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _healthBar = _slider.GetComponent<DrawBar>();
         _health = _maxHealth;
     }
 
     public void ReactionOnAction(int value)
     {
-        if(_health + value <= _maxHealth)
+        if(_health + value <= _maxHealth && _health > 0)
         {
             _health += value;
-            Animation(value);
-            DrawHealth(value);
+            PlayAnimation(value);
+            _barRenderer.ChangeBarValue(value);
         }
     }
 
-    private void DrawHealth(int value)
-    {
-        _healthBar.ChangeBarValue(value);
-    }
 
-    private void Animation(int value)
+    private void PlayAnimation(int value)
     {
         if(_health <= 0)
         {

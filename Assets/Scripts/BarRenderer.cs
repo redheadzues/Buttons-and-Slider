@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DrawBar : MonoBehaviour
+[RequireComponent(typeof(Slider))]
+public class BarRenderer : MonoBehaviour
 {
     [SerializeField] private float _barChangeSpeed;
 
@@ -16,22 +17,17 @@ public class DrawBar : MonoBehaviour
 
     public void ChangeBarValue(float value)
     {
-        float _currentValue = _slider.value + value;
-        StartCoroutine(ChangeValue(_currentValue));
+        float currentValue = _slider.value + value;
+        StartCoroutine(ChangeValue(currentValue));
     }
 
-    private IEnumerator ChangeValue(float _targetValue)
+    private IEnumerator ChangeValue(float targetValue)
     {
         var waitingTime = new WaitForSeconds(0.2f);
 
-        while (_slider.value != _targetValue)
+        while (_slider.value != targetValue)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, _targetValue, _barChangeSpeed);
-
-            if (_slider.value <= 0)
-            {
-                _slider.maxValue = 0;
-            }
+            _slider.value = Mathf.MoveTowards(_slider.value, targetValue, _barChangeSpeed);
 
             yield return waitingTime;
         }

@@ -382,7 +382,6 @@ GameObject:
   - component: {fileID: 290371294}
   - component: {fileID: 290371293}
   - component: {fileID: 290371292}
-  - component: {fileID: 290371291}
   m_Layer: 5
   m_Name: Button Attack
   m_TagString: Untagged
@@ -410,20 +409,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1, y: 2.1900024}
   m_SizeDelta: {x: 2, y: 2.369995}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &290371291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290371289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c422b7367ace7e5459d0dc8b520107a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _barChangeValue: -10
-  _player: {fileID: 1393735168}
 --- !u!114 &290371292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +452,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 290371293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1393735170}
+        m_TargetAssemblyTypeName: Hero, Assembly-CSharp
+        m_MethodName: ReactionOnAction
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &290371293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +515,6 @@ GameObject:
   - component: {fileID: 354717523}
   - component: {fileID: 354717522}
   - component: {fileID: 354717521}
-  - component: {fileID: 354717520}
   m_Layer: 5
   m_Name: Button Heal
   m_TagString: Untagged
@@ -546,20 +542,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1, y: 2.1900024}
   m_SizeDelta: {x: 4, y: 2.369995}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &354717520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354717518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c422b7367ace7e5459d0dc8b520107a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _barChangeValue: 10
-  _player: {fileID: 1393735168}
 --- !u!114 &354717521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +585,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 354717522}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1393735170}
+        m_TargetAssemblyTypeName: Hero, Assembly-CSharp
+        m_MethodName: ReactionOnAction
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &354717522
 MonoBehaviour:
   m_ObjectHideFlags: 0
