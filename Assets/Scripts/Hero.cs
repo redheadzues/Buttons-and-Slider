@@ -21,7 +21,7 @@ public class Hero : MonoBehaviour
         _health = _maxHealth;
     }
 
-    public void ReactionOnAction(int value)
+    private void ReactionOnAction(int value)
     {
         if(_health + value <= _maxHealth && _health > 0)
         {
