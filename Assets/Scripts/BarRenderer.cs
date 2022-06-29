@@ -8,6 +8,7 @@ public class BarRenderer : MonoBehaviour
 {
     [SerializeField] private float _barChangeSpeed;
 
+    private float _coroutineWaitingTime = 0.2f;
     private Slider _slider;
 
     private void Start()
@@ -23,7 +24,7 @@ public class BarRenderer : MonoBehaviour
 
     private IEnumerator ChangeValue(float targetValue)
     {
-        var waitingTime = new WaitForSeconds(0.2f);
+        var waitingTime = new WaitForSeconds(_coroutineWaitingTime);
 
         while (_slider.value != targetValue)
         {

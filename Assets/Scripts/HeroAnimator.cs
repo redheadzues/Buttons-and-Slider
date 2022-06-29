@@ -16,7 +16,7 @@ public class HeroAnimator : MonoBehaviour
     }
     public void Play(int value, int health)
     {
-        if (health + value <= 0)
+        if (health <= 0)
         {
             _animator.SetTrigger(_die);
         }
