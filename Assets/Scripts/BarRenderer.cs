@@ -10,6 +10,7 @@ public class BarRenderer : MonoBehaviour
 
     private float _coroutineWaitingTime = 0.2f;
     private Slider _slider;
+    private Coroutine _dontCallDuubleCoroutine;
 
     private void Start()
     {
@@ -19,7 +20,13 @@ public class BarRenderer : MonoBehaviour
     public void ChangeBarValue(float value)
     {
         float currentValue = _slider.value + value;
-        StartCoroutine(ChangeValue(currentValue));
+
+        if(_dontCallDuubleCoroutine != null)
+        {
+            StopCoroutine(_dontCallDuubleCoroutine);            
+        }
+
+        _dontCallDuubleCoroutine = StartCoroutine(ChangeValue(currentValue));
     }
 
     private IEnumerator ChangeValue(float targetValue)
