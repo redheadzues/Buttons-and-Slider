@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class BarRenderer : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     [SerializeField] private float _barChangeSpeed;
 
