@@ -455,25 +455,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1393735170}
         m_TargetAssemblyTypeName: Hero, Assembly-CSharp
-        m_MethodName: ReactionOnAction
+        m_MethodName: ChangeHealth
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: -10
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 146872975}
-        m_TargetAssemblyTypeName: BarRenderer, Assembly-CSharp
-        m_MethodName: ChangeBarValue
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: -10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -600,25 +588,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1393735170}
         m_TargetAssemblyTypeName: Hero, Assembly-CSharp
-        m_MethodName: ReactionOnAction
+        m_MethodName: ChangeHealth
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 10
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 146872975}
-        m_TargetAssemblyTypeName: BarRenderer, Assembly-CSharp
-        m_MethodName: ChangeBarValue
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1241,7 +1217,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c8ad7c1abeb754d837060b393abb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _barRenderer: {fileID: 146872975}
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 146872975}
+        m_TargetAssemblyTypeName: BarRenderer, Assembly-CSharp
+        m_MethodName: ChangeBarValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1449368167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1076146770848506, guid: e401b93f8d618fb43b67f19b68229e3c, type: 3}
@@ -1259,7 +1249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c8ad7c1abeb754d837060b393abb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _barRenderer: {fileID: 0}
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &1449368170
 Animator:
   serializedVersion: 3
