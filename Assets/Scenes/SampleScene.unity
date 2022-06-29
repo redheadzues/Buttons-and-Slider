@@ -465,6 +465,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 146872975}
+        m_TargetAssemblyTypeName: BarRenderer, Assembly-CSharp
+        m_MethodName: ChangeBarValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -10
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &290371293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,6 +607,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 10
           m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 146872975}
+        m_TargetAssemblyTypeName: BarRenderer, Assembly-CSharp
+        m_MethodName: ChangeBarValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1193,6 +1217,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1899552673243524, guid: e401b93f8d618fb43b67f19b68229e3c, type: 3}
   m_PrefabInstance: {fileID: 52760157}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1393735169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393735168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bfa2f551243564cb183063e1893d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1393735170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,7 +1241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c8ad7c1abeb754d837060b393abb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 146872976}
+  _barRenderer: {fileID: 146872975}
 --- !u!1 &1449368167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1076146770848506, guid: e401b93f8d618fb43b67f19b68229e3c, type: 3}
@@ -1223,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c8ad7c1abeb754d837060b393abb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 146872976}
+  _barRenderer: {fileID: 0}
 --- !u!95 &1449368170
 Animator:
   serializedVersion: 3
@@ -1243,6 +1279,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1449368171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449368167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bfa2f551243564cb183063e1893d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1483214326
 GameObject:
   m_ObjectHideFlags: 0
