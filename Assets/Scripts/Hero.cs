@@ -21,7 +21,7 @@ public class Hero : MonoBehaviour
         _health = _maxHealth;
     }
 
-    public void ChangeHealth(int value)
+    public void TakeDamage(int value)
     {
         if(_health > _minHealth)
         {
@@ -29,6 +29,16 @@ public class Hero : MonoBehaviour
             _animation.Play(value, _health);
             HealthChanged?.Invoke(value);
         }        
-    }   
+    }
+    
+    public void TakeHeal(int value)
+    {
+        if (_health > _minHealth)
+        {
+            _health = Mathf.Clamp(_health + value, _minHealth, _maxHealth);
+            _animation.Play(value, _health);
+            HealthChanged?.Invoke(value);
+        }
+    }
 }
 
