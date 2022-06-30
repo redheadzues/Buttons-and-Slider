@@ -7,26 +7,37 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private float _barChangeSpeed;
+    [SerializeField] private Hero _hero;
 
     private float _coroutineWaitingTime = 0.2f;
     private Slider _slider;
-    private Coroutine _dontCallDuubleCoroutine;
+    private Coroutine _coroutine;
 
     private void Start()
     {
         _slider = GetComponent<Slider>();
     }
 
-    public void ChangeBarValue(float value)
+    private void OnEnable()
+    {
+        _hero.HealthChanged += ChangeBarValue;
+    }
+
+    private void OnDisable()
+    {
+        _hero.HealthChanged -= ChangeBarValue;
+    }
+
+    private void ChangeBarValue(float value)
     {
         float currentValue = _slider.value + value;
 
-        if(_dontCallDuubleCoroutine != null)
+        if(_coroutine != null)
         {
-            StopCoroutine(_dontCallDuubleCoroutine);            
+            StopCoroutine(_coroutine);            
         }
 
-        _dontCallDuubleCoroutine = StartCoroutine(ChangeValue(currentValue));
+        _coroutine = StartCoroutine(ChangeValue(currentValue));
     }
 
     private IEnumerator ChangeValue(float targetValue)
